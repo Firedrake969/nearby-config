@@ -11,7 +11,7 @@
     <br />
     <button id="save">Save</button>
     <script>
-        document.getElementById('save').on('click', function(e) {
+        document.getElementById('save').addEventListener('click', function(e) {
             var dist = Math.round(document.getElementById('distance').value * 1609.344);
             var options = {
                 distance: dist,
