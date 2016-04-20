@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pebble App Settings</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+    <div>Distance</div>
+    <input id="distance" type="number" step="any" />
+    <br />
+    <button id="save">Save</button>
+    <script>
+        document.getElementById('save').on('click', function(e) {
+            var dist = Math.round(document.getElementById('distance').value * 1609.344);
+            var options = {
+                distance: dist,
+            };
+            document.location = 'pebblejs://close#' + encodeURIComponent(JSON.stringify(options));
+        });
+    </script>
+</body>
+</html>
