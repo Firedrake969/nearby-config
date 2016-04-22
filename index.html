@@ -17,7 +17,11 @@
         var curOpts = JSON.parse(decodeURIComponent(window.location.hash.substr(1)));
         for (var key in curOpts) {
             if (document.getElementById(key)) {
-                document.getElementById(key).value = curOpts[key];
+                if (key == 'radius') {
+                    document.getElementById(key).value = Math.round(curOpts[key] / 1609.344);
+                } else {
+                    document.getElementById(key).value = curOpts[key];
+                }
             }
         }
         document.getElementById('save').addEventListener('click', function(e) {
