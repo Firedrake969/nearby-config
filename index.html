@@ -18,8 +18,10 @@
         if (curOpts.length) {
             curOpts = curOpts.split('&');
             for (var i = 0; i < curOpts.length; i++) {
-        //         var option = curOpts[i].split('=');
-        //         document.getElementById(option[0]).value = option[1];
+                var option = curOpts[i].split('=');
+                if (document.getElementById(option[0])) {
+                    document.getElementById(option[0]).value = option[1];
+                }
             }
         }
         document.getElementById('save').addEventListener('click', function(e) {
