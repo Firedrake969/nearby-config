@@ -14,14 +14,10 @@
     <br />
     <button id="save">Save</button>
     <script>
-        var curOpts = location.href.split('?')[1] || [];
-        if (curOpts.length) {
-            curOpts = curOpts.split('&');
-            for (var i = 0; i < curOpts.length; i++) {
-                var option = curOpts[i].split('=');
-                if (document.getElementById(option[0])) {
-                    document.getElementById(option[0]).value = option[1];
-                }
+        var curOpts = JSON.parse(decodeURIComponent(window.location.hash.substr(1)));
+        for (var key in curOpts) {
+            if (document.getElementById(key)) {
+                document.getElementById(key).value = curOpts[key];
             }
         }
         document.getElementById('save').addEventListener('click', function(e) {
