@@ -14,14 +14,14 @@
     <br />
     <button id="save">Save</button>
     <script>
-        var curOpts = location.href.split('?')[1] || [];
-        if (curOpts.length) {
-            curOpts = curOpts.split('&');
-            for (var i = 0; i < curOpts.length; i++) {
-                var option = curOpts[i].split('=');
-                document.getElementById(option[0]).value = option[1];
-            }
-        }
+        // var curOpts = location.href.split('?')[1] || [];
+        // if (curOpts.length) {
+        //     curOpts = curOpts.split('&');
+        //     for (var i = 0; i < curOpts.length; i++) {
+        //         var option = curOpts[i].split('=');
+        //         document.getElementById(option[0]).value = option[1];
+        //     }
+        // }
         document.getElementById('save').addEventListener('click', function(e) {
             var radius = Math.round(document.getElementById('radius').value * 1609.344);
             var apiKey = document.getElementById('apiKey').value;
