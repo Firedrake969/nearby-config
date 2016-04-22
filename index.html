@@ -14,7 +14,7 @@
     <br />
     <button id="save">Save</button>
     <script>
-        var curOpts = location.href.split('?')[1];
+        var curOpts = location.href.split('?')[1] || [];
         if (curOpts.length) {
             curOpts = curOpts.split('&');
             for (var i = 0; i < curOpts.length; i++) {
