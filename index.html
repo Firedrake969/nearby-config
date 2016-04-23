@@ -2,17 +2,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Pebble App Settings</title>
+    <title>Nearby App Settings</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
 </head>
-<body>
-    <div>API Key</div>
-    <input id="apiKey" type="text" step="any" />
-    <br />
+<body class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 col-xs-12">
+            <h2 class="text-center">Nearby App Settings</h2>
+        </div>
 
-    <div>Search Radius</div>
-    <input id="radius" type="tel" step="any" />
-    <br />
-    <button id="save">Save</button>
+        <div class="col-md-6 col-xs-12">
+            <h3 class="text-center">API Key</h3>
+            <input class="form-control" id="apiKey" type="text" step="any" />
+            <br />
+        </div>
+
+        <div class="col-md-6 col-xs-12">
+            <h3 class="text-center">Search Radius</h3>
+            <input class="form-control" id="radius" type="tel" step="any" />
+            <br />
+        </div>
+        <div class="col-md-6 col-xs-12">
+            <button class="btn btn-success btn-lg center-block" id="save">Save</button>
+        </div>
+    </div>
     <script>
         var curOpts = JSON.parse(decodeURIComponent(window.location.hash.substr(1)));
         for (var key in curOpts) {
