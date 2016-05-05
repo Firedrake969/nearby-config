@@ -38,6 +38,16 @@
                 }
             }
         }
+        function getQueryParam(variable, default_) {
+            var query = location.search.substring(1);
+            var vars = query.split('&');
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split('=');
+                if (pair[0] == variable)
+                    return decodeURIComponent(pair[1]);
+            }
+            return default_ || false;
+        }
         document.getElementById('save').addEventListener('click', function(e) {
             var radius = Math.round(document.getElementById('radius').value * 1609.344);
             var apiKey = document.getElementById('apiKey').value;
@@ -45,7 +55,7 @@
                 radius: radius,
                 apiKey: apiKey,
             };
-            window.location.href = 'pebblejs://close#' + encodeURIComponent(JSON.stringify(options));
+            window.location.href = getQueryParam('return_to', 'pebblejs://close#') + encodeURIComponent(JSON.stringify(options));
         });
     </script>
 </body>
